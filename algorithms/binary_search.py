@@ -1,5 +1,4 @@
 def binary_search(sorted_list, item):
-    print(sorted_list)
     low = 0
     high = len(sorted_list) - 1
     if high >= low:
