@@ -1,6 +1,5 @@
-============================
 Data Structures & Algorithms
-===========================
+---------------------------
 
 This repo works as a store-house for implementations of fundamental data structures & algorithms.
 
