@@ -12,3 +12,9 @@ def binary_search(sorted_list, item):
             return True
     else:
         return None
+
+
+def test_():
+    test = [x for x in range(10)]
+    for i in test:
+        assert binary_search(test, i)
