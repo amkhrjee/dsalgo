@@ -13,3 +13,10 @@ How to test?
 I am using ``pytest`` for testing. Simply run the following to test everything::
 
     pytest -q algorithms/* data_structures/*
+
+Resources
+~~~~~~~~~~~
+These are the resources I have been following lately:
+    - 📺 `The Last Algorithms Class You'll Need by @theprimeagen <https://frontendmasters.com/courses/algorithms/>`_
+    - 📗 Introduction to Algorithms by CLRS
+    - 📗 Grokking Algorithms by Aditya Bhargava
