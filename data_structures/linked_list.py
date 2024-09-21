@@ -32,7 +32,6 @@ class LinkedList:
     def insert(self, data, index):
         if index >= self.length:
             raise IndexError("Index out of bound")
-            return
         if index == 0:
             self.insert_at_head(data)
         elif index == self.length - 1:
@@ -82,7 +81,7 @@ class LinkedList:
                     if prev_node:
                         prev_node.next = curr_node.next
                     else:
-                        self.head = None
+                        self.head = self.head.next
                     self.length -= 1
                 prev_node = curr_node
                 curr_node = curr_node.next
@@ -106,3 +105,9 @@ def test_():
     prev_len = ll.length
     ll.delete(50)
     assert ll.length == prev_len - 1
+    ll.delete(20)
+    ll.pretty_print()
+    assert ll.length == prev_len - 2
+
+
+test_()
