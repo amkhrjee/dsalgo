@@ -73,6 +73,7 @@ class BinarySearchTree:
         elif item < node.data:
             node.left = self._delete(node.left, item)
         else:
+            # we've found the node, now delete it
             # 1 child node case
             if node.left is None:
                 return node.right
