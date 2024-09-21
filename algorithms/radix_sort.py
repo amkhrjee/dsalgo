@@ -11,7 +11,6 @@ def radix_sort(input):
                 arr[i] = int((str(arr[i])[::-1])[digit])
             else:
                 arr[i] = 0
-        print(f"Radix array = {arr}")
         count_arr = [0] * (max(arr) + 1)
         sorted_arr = [None] * len(arr)
 
@@ -25,7 +24,6 @@ def radix_sort(input):
             count_arr[i] = count_arr[i - 1]
 
         count_arr[0] = 0
-        print(f"Original = {original}")
         for original_num, num in zip(original, arr):
             sorted_index = count_arr[num]
             count_arr[num] += 1
@@ -35,6 +33,7 @@ def radix_sort(input):
 
     max_digits = len(str(max(input)))
     sorted_arr = input
+    # counting sort for each radix starting from the smallest
     for i in range(max_digits):
         sorted_arr = counting_sort(sorted_arr, i)
     return sorted_arr
