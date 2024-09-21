@@ -2,7 +2,7 @@ def binary_search(sorted_list, item):
     low = 0
     high = len(sorted_list) - 1
     if high >= low:
-        mid = int((low + high) / 2)
+        mid = (low + high) // 2
         guess = sorted_list[mid]
         if item < guess:
             return binary_search(sorted_list[:mid], item)
