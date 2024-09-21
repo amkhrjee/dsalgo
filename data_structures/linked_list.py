@@ -27,7 +27,6 @@ class LinkedList:
             self.head = new_node
         else:
             self.head = new_node
-            self.length += 1
         self.length += 1
 
     def insert(self, data, index):
