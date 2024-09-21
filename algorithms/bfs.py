@@ -29,7 +29,4 @@ def test_():
     g.connect(D, E)
     g.connect(E, F)
 
-    print(bfs(g, A, 10))
-
-
-test_()
+    assert bfs(g, A, 10)
