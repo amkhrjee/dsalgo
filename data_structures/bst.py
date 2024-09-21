@@ -65,17 +65,20 @@ class BinarySearchTree:
     # Watch this: https://www.youtube.com/watch?v=LFzAoJJt92M
     def _delete(self, node, item):
         if not node:
+            # no child node case
             return node
+        # finding the node
         if item > node.data:
             node.right = self._delete(node.right, item)
         elif item < node.data:
             node.left = self._delete(node.left, item)
         else:
+            # 1 child node case
             if node.left is None:
                 return node.right
             elif node.right is None:
                 return node.left
-
+            # 2 child nodes case
             current = node.right
             while current.left:
                 current = current.left
