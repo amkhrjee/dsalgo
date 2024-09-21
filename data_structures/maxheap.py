@@ -36,6 +36,7 @@ class MaxHeap:
             # the item at the root is not largest,
             # swap it with whatever _is_ the largest
             heap[largest], heap[index] = heap[index], heap[largest]
+            self._max_heapify(heap, heap_size, largest)
 
     def pop(self):
         val = self.heap.pop(1)
@@ -45,10 +46,21 @@ class MaxHeap:
     def peek(self):
         return self.heap[1]
 
+    # Heap sort
+    def sort(self):
+        # returns the sorted array
+        heap = self.heap
+        for i in range(len(heap) - 1, 1, -1):
+            heap[i], heap[1] = heap[1], heap[i]
+            self._max_heapify(heap, i, 1)
+
+        return heap[1:]
+
 
 def test_():
     arr = [random.randint(0, 100) for _ in range(10)]
     max_heap = MaxHeap(arr)
     assert max_heap.pop() == max(arr)
     arr.remove(max(arr))
-    assert max_heap.pop() == max(arr)
+    assert max_heap.peek() == max(arr)
+    assert sorted(arr) == max_heap.sort()
